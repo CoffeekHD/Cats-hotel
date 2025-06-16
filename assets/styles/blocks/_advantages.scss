@@ -1,0 +1,55 @@
+.advantages {
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        background-image: url("../images/decorative/paw.svg");
+        background-repeat: no-repeat;
+        top: 10px;
+        right: 0px;
+        width: 367px;
+        height: 314px;
+
+        @include mobile {
+            display: none;
+        }
+    }
+
+    &__title {
+        --padding-top: 140px;
+
+        padding-top: var(--padding-top);
+
+        @include tablet {
+            --padding-top: 70px;
+        }
+    }
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px 30px;
+        margin-top: 70px;
+        &-item {
+            border-radius: 8px;
+            width: 370px;
+            min-height: 370px;
+            box-shadow: var(--box-shadow);
+            padding-top: 30px;
+            padding-inline: 30px;
+        }
+
+        &-title {
+            font-family: var(--font-Rubik-bold);
+            margin-top: 35px;
+            margin-bottom: 20px;
+            font-size: 22px;
+        }
+
+        &-text {
+            line-height: 1.4;
+        }
+    }
+}

@@ -1,0 +1,47 @@
+.catalog-card {
+    box-shadow: var(--box-shadow);
+    border: 1px solid #e1e1e1;
+    border-radius: 6px;
+
+    &__image {
+        border-radius: 6px 6px 0 0;
+    }
+
+    &__content {
+        padding-top: 25px;
+        padding-left: 20px;
+        padding-bottom: 25px;
+    }
+
+    &__title {
+        margin-bottom: 20px;
+        font-size: 20px;
+        font-family: var(--font-Rubik-bold);
+    }
+
+    &__list {
+        &-item {
+            font-size: 14px;
+        }
+
+        &-item:not(:last-of-type) {
+            margin-bottom: 15px;
+        }
+
+        &-item:last-of-type {
+            margin-bottom: 25px;
+        }
+
+        &-price {
+            font-size: 18px ;
+            font-weight: 700;
+        }
+    }
+
+   
+
+    &__room-elements {
+        display: flex;
+        column-gap: 8px;
+    }
+}

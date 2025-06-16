@@ -1,0 +1,54 @@
+.catalog {
+    padding-top: 70px;
+
+    @include tablet {
+        padding-top: 140px;
+    }
+
+    &__top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 50px;
+
+        @include mobile {
+            flex-direction: column;
+            row-gap: 20px;
+            align-items: flex-start;
+        }
+    }
+
+    &__title {
+        font-family: var(--font-Rubik-bold);
+        font-size: 36px;
+    }
+
+    &__bottom {
+        display: flex;
+        column-gap: 80px;
+
+        @include laptop {
+            column-gap: 40px;
+        }
+
+        @include tablet {
+            flex-direction: column;
+        }
+
+        &-list {
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            gap: 30px;
+            flex-wrap: wrap;
+
+            @include laptop {
+                justify-content: flex-start;
+            }
+
+            @include tablet {
+                justify-content: center;
+            }
+        }
+    }
+}

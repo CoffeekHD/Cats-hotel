@@ -1,0 +1,100 @@
+.sidebar {
+    &__title {
+        margin-bottom: 20px;
+    }
+
+    &__price {
+        &-wrapper {
+            display: flex;
+            column-gap: 10px;
+        }
+
+        &-field {
+            border: 1px solid #e1e1e1;
+            padding: 7px 50px 7px 5px;
+            max-width: 100px;
+            margin-bottom: 35px;
+            &::placeholder {
+                color: var(--color-dark);
+            }
+        }
+    }
+
+    &__list {
+        @include tablet {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            column-gap: 20px;
+        }
+        &-item {
+            display: flex;
+            column-gap: 10px;
+            align-items: center;
+            user-select: none;
+
+            label {
+                cursor: pointer;
+            }
+        }
+
+        &-item:not(:last-of-type) {
+            margin-bottom: 15px;
+        }
+
+        &-item:last-of-type {
+            margin-bottom: 35px;
+
+            @include tablet {
+                margin-bottom: 15px;
+            }
+        }
+    }
+
+    &__checkbox {
+        position: relative;
+        opacity: 0;
+        height: 0;
+        width: 0;
+    }
+
+    &__checkmark {
+        position: relative;
+        width: 20px;
+        height: 20px;
+        background-color: var(--color-light);
+        border: 1px solid #e1e1e1;
+        &::after {
+            content: "";
+            position: absolute;
+            scale: 0;
+            width: 10px;
+            height: 10px;
+            top: 30%;
+            left: 20%;
+            background-image: url("../images/icons/checkmark.svg");
+            background-repeat: no-repeat;
+            transition: var(--transition-duration);
+        }
+    }
+
+    &__checkbox:checked ~ &__checkmark::after {
+        scale: 1;
+    }
+
+    &__controls {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        row-gap: 15px;
+
+        @include tablet {
+            flex-wrap: wrap;
+            flex-direction: row;
+            column-gap: 15px;
+            justify-content: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+    }
+}

@@ -1,0 +1,130 @@
+.room {
+    padding-top: 70px;
+
+    @include tablet {
+        padding-top: 140px;
+    }
+
+    &__wrapper {
+        display: flex;
+        column-gap: 30px;
+
+        @include tablet {
+            flex-direction: column;
+        }
+    }
+
+    &__images {
+        display: flex;
+        flex-direction: column;
+        row-gap: 27px;
+
+    }
+
+    &__gallery {
+        display: flex;
+        column-gap: 30px;
+    }
+
+    &__image {
+        border-radius: 4px;
+        opacity: 50%;
+    }
+
+    &__main-image {
+        object-fit: cover;
+    }
+
+    &__description {
+        margin-left: 40px;
+        &-title {
+            font-size: 36px;
+            font-family: var(--font-Rubik-bold);
+            margin-bottom: 20px;
+            line-height: 0.4;
+
+            @include laptop {
+                font-size: 25px;
+                line-height: 1;
+            }
+
+            @include tablet {
+                margin-top: 30px;
+            }
+        }
+
+        @include laptop {
+            margin-left: 0;
+        }
+    }
+
+    &__list {
+        @include tablet {
+            display: flex;
+            column-gap: 30px;
+            flex-wrap: wrap;
+        }
+        &-item:not(:last-of-type) {
+            margin-bottom: 20px;
+        }
+        &-item:last-of-type {
+            margin-bottom: 15px;
+        }
+    }
+
+    &__equipment-list {
+        @include tablet {
+            display: flex;
+            column-gap: 30px;
+            flex-wrap: wrap;
+        }
+    }
+
+    &__equipment-item {
+        display: flex;
+        column-gap: 8px;
+        align-items: center;
+    }
+
+    &__equipment-item:not(:last-of-type) {
+        margin-bottom: 13px;
+    }
+
+    &__equipment-item:last-of-type {
+        margin-bottom: 30px;
+
+        @include tablet {
+            margin-bottom: 15px;
+        }
+    }
+
+    &__price {
+        margin-bottom: 30px;
+
+        span {
+            margin-left: 12px;
+            font-weight: 700;
+        }
+
+        @include tablet {
+            margin-bottom: 0;
+        }
+    }
+
+    &__bottom {
+        @include tablet {
+            display: flex;
+            align-items: center;
+            flex-direction: row-reverse;
+            justify-content: flex-end;
+            column-gap: 30px;
+        }
+
+        @include mobile {
+            margin-top: 20px;
+            flex-direction: column;
+            row-gap: 30px;
+            align-items: flex-start;
+        }
+    }
+}

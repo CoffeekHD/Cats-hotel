@@ -1,0 +1,108 @@
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: 10000;
+    background-color: var(--color-light);
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+    max-width: 570px;
+
+    &::before {
+        content: "";
+        position: absolute;
+        background-image: url("../images/background/modalBackground.svg");
+        background-repeat: no-repeat;
+        background-position: top;
+        width: 137px;
+        height: 140px;
+        top: -30px;
+        left: -30px;
+    }
+
+    &__close-wrapper {
+        display: flex;
+        padding-top: 30px;
+        padding-right: 40px;
+        justify-content: flex-end;
+
+        @include tablet {
+            padding-top: 60px;
+            padding-right: 60px;
+        }
+    }
+
+    &__close {
+        cursor: pointer;
+    }
+
+    &__wrapper {
+        padding: 30px 70px 70px 70px;
+
+        @include tablet {
+            padding: 10px 70px 70px 70px;
+        }
+    }
+
+    &__title {
+        margin-bottom: 50px;
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        row-gap: 20px;
+    }
+
+    &__form-flex {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: center;
+        row-gap: 20px;
+    }
+
+    &__form-column {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        column-gap: 20px;
+    }
+
+    &__from-input {
+        width: 100%;
+        border: 1px solid #d7d7d7;
+        border-radius: 25px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        padding-left: 30px;
+        font-size: 16px;
+        
+        &::placeholder {
+            color: var(--font-color);
+
+        }
+    }
+
+    &__from-input-date {
+        min-width: 100px;
+        max-width: 200px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        padding-inline: 10px;
+        width: 25%;
+        &::placeholder {
+            color: #b5b5b5;
+            width: 129px;
+            height: 52px;
+        }
+    }
+
+    &__button-wrapper {
+        display: flex;
+        margin-top: 30px;
+        justify-content: center;
+    }
+}

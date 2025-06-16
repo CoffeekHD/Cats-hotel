@@ -1,0 +1,61 @@
+.banner {
+    --margin-top: 140px;
+
+    margin-top: var(--margin-top);
+
+    @include tablet {
+        --margin-top: 70px;
+    }
+
+    @include tablet {
+        display: none;
+    }
+
+    &__wrapper {
+        position: relative;
+        &::before {
+            content: "";
+            position: absolute;
+            background-image: url("../images/decorative/bannerPaw.svg");
+            background-repeat: no-repeat;
+            width: 241px;
+            height: 206px;
+        }
+    }
+
+    &__image {
+        border-radius: 10px;
+    }
+
+    &__content {
+        position: absolute;
+        top: 15%;
+        left: 20%;
+    }
+
+    &__title {
+        font-size: 36px;
+        font-family: var(--font-Rubik-bold);
+        margin-bottom: 25px;
+        
+        @include laptop {
+            font-size: 20px;
+        }
+
+        span {
+            font-size: 56px;
+
+            @include laptop {
+                font-size: 36px;
+            }
+        }
+    }
+
+    &__text {
+        margin-bottom: 36px;
+
+        @include laptop {
+            margin-bottom: 15px;
+        }
+    }
+}

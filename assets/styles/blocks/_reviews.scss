@@ -1,0 +1,98 @@
+.reviews {
+    --margin-top: 155px;
+
+    position: relative;
+    margin-top: var(--margin-top);
+    margin-bottom: 70px;
+
+    @include tablet {
+        --margin-top: 70px;
+    }
+
+    &__title {
+        margin-bottom: 70px;
+        user-select: none;
+    }
+
+    &-slide {
+        position: relative;
+        padding: 35px 35px 35px 62px;
+        border-radius: 8px;
+        box-shadow: var(--box-shadow);
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 38px;
+            left: 27px;
+            background-image: url("../images/decorative/quote.svg");
+            background-repeat: no-repeat;
+            width: 27px;
+            height: 30px;
+        }
+
+        &__wrapper {
+            max-width: 470px;
+        }
+
+        &__text {
+            margin-bottom: 25px;
+        }
+
+        &__bottom {
+            display: flex;
+            justify-content: space-between;
+            color: #848484;
+            font-size: 14px;
+            
+            cite {
+                font-style: normal;
+            }
+        }
+
+        &__controls {
+            display: flex;
+            align-items: flex-end;
+        }
+
+        &__pagination {
+            position: static !important;
+            margin-top: 55px;
+
+            .swiper-pagination-bullet {
+                width: 12px;
+                height: 12px;
+            }
+            .swiper-pagination-bullet-active {
+                background-color: var(--color-yellow);
+            }
+
+            .reviews-slide__button-prev, .reviews-slide__button-next {
+                position: static !important;
+            }
+
+        }
+        
+        &__button-prev {
+            margin-right: 10px;
+        }
+
+        &__button-prev::after,
+        &__button-next::after {
+            display: none;
+        }
+        &__button-prev,
+        &__button-next {
+            position: static !important;
+            box-shadow: var(--slider-buttons-shadow);
+            width: 36px !important;
+            height: 36px !important;
+            border-radius: 100%;
+
+            svg {
+                width: auto !important;
+                height: auto !important;
+            }
+        }
+    }
+}

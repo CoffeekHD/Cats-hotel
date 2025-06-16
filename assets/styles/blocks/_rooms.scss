@@ -1,0 +1,162 @@
+.rooms {
+    --margin-top: 137px;
+
+    position: relative;
+    padding-top: var(--margin-top);
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 160px;
+        left: 70px;
+        background-image: url("../images/decorative/fish.svg");
+        width: 484px;
+        height: 151px;
+    }
+
+    @include tablet {
+        --margin-top: 70px;
+
+        &::before {
+            display: none;
+        }
+    }
+
+    &__title {
+        margin-bottom: 70px;
+    }
+
+    &-slide {
+        display: flex !important;
+        
+        @include tablet {
+            flex-direction: column;
+        }
+
+        &__image {
+            position: relative;
+            left: 30px;
+            border-radius: 10px;
+
+            @include tablet {
+                position: static;
+            }
+        }
+
+        &__content {
+            position: relative;
+            z-index: 200;
+            top: 60px;
+            right: 40px;
+            padding: 40px 117px 40px 100px;
+            border-radius: 8px;
+            width: 500px;
+            height: max-content;
+            background-color: var(--color-light);
+            box-shadow: var(--box-shadow);
+
+            @include laptop {
+                right: 140px;
+                padding: 20px 60px 20px 20px;
+            }
+
+            @include tablet {
+                position: static;
+                width: 100%;
+            }
+
+            @include mobile {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        &__title {
+            font-family: var(--font-Rubik-bold);
+            font-size: 22px;
+            margin-bottom: 30px;
+        }
+
+        &__list {
+            @include tablet {
+                display: flex;
+                column-gap: 30px;
+                align-items: flex-start;
+            }
+            @include mobile {
+                flex-direction: column;
+            }
+        }
+
+        &__list-item {
+            display: flex;
+            align-items: center;
+            column-gap: 8px;
+        }
+
+        &__list-item:not(:last-child) {
+            margin-bottom: 20px;
+        }
+
+        &__list-item:last-child {
+            margin-bottom: 30px;
+        }
+
+        &__button {
+
+            @include tablet {
+                margin: 0 auto;
+            }
+
+            @include mobile {
+                margin: 0;
+            }
+        }
+
+        &__controls {
+            display: flex;
+            align-items: flex-end;
+        }
+
+        &__pagination {
+            position: static !important;
+            margin-top: 55px;
+
+            .swiper-pagination-bullet {
+                width: 12px;
+                height: 12px;
+            }
+            .swiper-pagination-bullet-active {
+                background-color: var(--color-yellow);
+            }
+
+            .rooms-slide__button-prev, .rooms-slide__button-next {
+                position: static !important;
+            }
+
+        }
+
+        &__button-prev {
+            margin-right: 10px;
+        }
+
+        &__button-prev::after,
+        &__button-next::after {
+            display: none;
+        }
+        &__button-prev,
+        &__button-next {
+            position: static !important;
+            box-shadow: var(--slider-buttons-shadow);
+            width: 36px !important;
+            height: 36px !important;
+            border-radius: 100%;
+
+            svg {
+                width: auto !important;
+                height: auto !important;
+            }
+        }
+    }
+}
